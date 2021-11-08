@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "31DDD8B2-7386-4974-A905-9FD108BB1B04"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C95EC3B-82FA-4C2B-927D-4906650E71AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RappiCodeChallenge/Utils/NetworkMonitor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "startMonitoring()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "468DF07F-CDFA-4879-95BE-65FA6F463314"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "fetchVideos(_:type:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCB9E0E1-A347-4682-A179-227831EE400F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "fetchVideos(_:type:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FCB9E0E1-A347-4682-A179-227831EE400F - adc7907d3f395d0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in RappiCodeChallenge.DetailsViewModel.fetchVideos(_: Swift.String, type: RappiCodeChallenge.FeedType) -&gt; ()"
+                  moduleName = "RappiCodeChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentvillalta/Downloads/RappiCodeChallenge/RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "283">
+               </Location>
+               <Location
+                  uuid = "FCB9E0E1-A347-4682-A179-227831EE400F - 1b21e48abd85c576"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #1 @Sendable () async -&gt; () in RappiCodeChallenge.DetailsViewModel.fetchVideos(_: Swift.String, type: RappiCodeChallenge.FeedType) -&gt; ()"
+                  moduleName = "RappiCodeChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentvillalta/Downloads/RappiCodeChallenge/RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "107">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94376686-B27E-4C65-B6A6-92B0EB23CC24"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "fetchVideos(_:type:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "94376686-B27E-4C65-B6A6-92B0EB23CC24 - adc7907d3f395d0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in RappiCodeChallenge.DetailsViewModel.fetchVideos(_: Swift.String, type: RappiCodeChallenge.FeedType) -&gt; ()"
+                  moduleName = "RappiCodeChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentvillalta/Downloads/RappiCodeChallenge/RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "283">
+               </Location>
+               <Location
+                  uuid = "94376686-B27E-4C65-B6A6-92B0EB23CC24 - 1b21e48abd85c576"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #1 @Sendable () async -&gt; () in RappiCodeChallenge.DetailsViewModel.fetchVideos(_: Swift.String, type: RappiCodeChallenge.FeedType) -&gt; ()"
+                  moduleName = "RappiCodeChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentvillalta/Downloads/RappiCodeChallenge/RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "107">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1011BEB-B46B-4946-9A82-DD3B5D2B19D5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RappiCodeChallenge/ViewModel/DetailsViewMode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "convert(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
