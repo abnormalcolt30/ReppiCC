@@ -10,38 +10,65 @@ import Foundation
 fileprivate let baseUrl = "https://api.themoviedb.org/3/"
 fileprivate let apiKey = "af7f60b3c0cf01ce3506f5a93a28cc62"
 
+enum EncodingError: Error {
+    case unableToEncode(String)
+}
+
 struct MoviesDBAPI {
     
-    static func fetch(category: Category) async throws -> MovieAPIResult {
+    static func fetch(category: Category, page: Int) async throws -> MovieAPIResult {
         var url = baseUrl + "movie/"
         switch category {
         case .popular:
-            url += "popular?api_key=\(apiKey)"
+            url += "popular?api_key=\(apiKey)&page=\(page)"
         case .topRated:
-            url += "top_rated?api_key=\(apiKey)"
+            url += "top_rated?api_key=\(apiKey)&page=\(page)"
         case .upcoming:
-            url += "upcoming?api_key=\(apiKey)"
+            url += "upcoming?api_key=\(apiKey)&page=\(page)"
+        case .nowPlaying:
+            url += "now_playing?api_key=\(apiKey)&page=\(page)"
+        case .onAir:
+            break
         }
         
         return try await httpRequestJson(url: url)
+    }
+    
+    static func search(_ string: String) async throws -> MovieAPIResult {
+        guard let urlEncoded = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw EncodingError.unableToEncode("Error encoding \(string)")
+        }
+
+        return try await httpRequestJson(url: baseUrl + "search/movie?api_key=\(apiKey)&query=\(urlEncoded)")
     }
 }
 
 
 struct SeriesDBAPI {
     
-    static func fetch(category: Category) async throws -> SerieAPIResult {
+    static func fetch(category: Category, page: Int) async throws -> SerieAPIResult {
         var url = baseUrl + "tv/"
         switch category {
         case .popular:
-            url += "popular?api_key=\(apiKey)"
+            url += "popular?api_key=\(apiKey)&page=\(page)"
+        case .nowPlaying:
+            break
+        case .onAir:
+            url += "on_the_air?api_key=\(apiKey)&page=\(page)"
         case .topRated:
-            url += "top_rated?api_key=\(apiKey)"
+            url += "top_rated?api_key=\(apiKey)&page=\(page)"
         case .upcoming:
-            url += "upcoming?api_key=\(apiKey)"
+            url += "upcoming?api_key=\(apiKey)&page=\(page)"
         }
         
         return try await httpRequestJson(url: url)
+    }
+    
+    static func search(_ string: String) async throws -> SerieAPIResult {
+        guard let urlEncoded = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw EncodingError.unableToEncode("Error encoding \(string)")
+        }
+        return try await httpRequestJson(url: baseUrl + "search/tv?api_key=\(apiKey)&query=\(urlEncoded)")
     }
 }
 

@@ -20,19 +20,20 @@ struct StartView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .onChange(of: viewModel.selectedSort, perform: { _ in
-                    viewModel.fetchData()
-                })
                 
                 Picker("", selection: $viewModel.selectedSort) {
-                    ForEach(viewModel.sorting, id: \.self) {
-                        Text($0.rawValue)
+                    switch viewModel.selectedFeed {
+                    case .series:
+                        ForEach(viewModel.sorting + [.onAir], id: \.self) {
+                            Text($0.rawValue)
+                        }
+                    case .movies:
+                        ForEach(viewModel.sorting + [.upcoming, .nowPlaying], id: \.self) {
+                            Text($0.rawValue)
+                        }
                     }
                 }
                 .pickerStyle(.segmented)
-                .onChange(of: viewModel.selectedSort, perform: { _ in
-                    viewModel.fetchData()
-                })
                 
                 switch viewModel.selectedFeed {
                 case .movies:
@@ -41,7 +42,16 @@ struct StartView: View {
                             DetailView(object: .movie(item), viewModel: DetailsViewModel())
                         } label: {
                             MoviewCell(item: item)
+                            
+                            
                         }
+                        if self.viewModel.movies.isLastItem(item) {
+                            Text("Fetching more...")
+                                .onAppear(perform: {
+                                    self.viewModel.fetchData()
+                                })
+                        }
+                        
                     })
                     
                 case .series:
@@ -52,6 +62,12 @@ struct StartView: View {
                             SerieCell(item: item)
                         }
                         
+                        if self.viewModel.series.isLastItem(item) {
+                            Text("Fetching more...")
+                                .onAppear(perform: {
+                                    self.viewModel.fetchData()
+                                })
+                        }
                     })
                 }
                 Spacer()
@@ -63,6 +79,16 @@ struct StartView: View {
         }
         .onAppear {
             viewModel.fetchData()
+        }.onChange(of: searchText) { newValue in
+            viewModel.fetchOnlineResults(newValue)
+        }.onChange(of: viewModel.selectedSort, perform: { _ in
+            viewModel.resetPagination()
+            viewModel.fetchData()
+        }).onChange(of: viewModel.selectedFeed) { newValue in
+            viewModel.resetPagination()
+            viewModel.selectedSort = .popular
+            viewModel.fetchData()
+            
         }
         
         

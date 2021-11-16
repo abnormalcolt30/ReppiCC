@@ -13,15 +13,16 @@ enum SerieError: Error {
 }
 
 protocol SerieRepositoryProtocol {
-    func fetchSeries(_ category: Category) async throws -> SerieAPIResult?
+    func fetchSeries(_ category: Category, page: Int) async throws -> SerieAPIResult?
+    func searchSeries(_ text: String) async throws -> SerieAPIResult?
 }
 
 final class SerieRepository: SerieRepositoryProtocol {
     let cache = NSCache<NSString, StructWrapper<[Serie]>>()
-    func fetchSeries(_ category: Category) async throws -> SerieAPIResult? {
+    func fetchSeries(_ category: Category, page: Int) async throws -> SerieAPIResult? {
         let cacheKey = "Serie\(category.rawValue)"
         if NetworkMonitor.shared.connected {
-            let response = try await SeriesDBAPI.fetch(category: category)
+            let response = try await SeriesDBAPI.fetch(category: category, page: page + 1)
             storeInCache(response.results, key: cacheKey)
             return response
         } else {
@@ -30,6 +31,10 @@ final class SerieRepository: SerieRepositoryProtocol {
             }
             return nil
         }
+    }
+    
+    func searchSeries(_ text: String) async throws -> SerieAPIResult? {
+        return try await SeriesDBAPI.search(text)
     }
     
     private func storeInCache(_ response: [Serie], key: String) {

@@ -14,15 +14,16 @@ enum MovieError: Error {
 }
 
 protocol MovieRepositoryProtocol {
-    func fetchMovies(_ category: Category) async throws -> MovieAPIResult?
+    func fetchMovies(_ category: Category, page: Int) async throws -> MovieAPIResult?
+    func searchMovies(_ text: String) async throws -> MovieAPIResult?
 }
 
 final class MovieRepository: MovieRepositoryProtocol {
     let cache = NSCache<NSString, StructWrapper<[Movie]>>()
-    func fetchMovies(_ category: Category) async throws -> MovieAPIResult? {
+    func fetchMovies(_ category: Category, page: Int) async throws -> MovieAPIResult? {
         let cacheKey = "Movies\(category.rawValue)"
         if NetworkMonitor.shared.connected {
-            let response = try await MoviesDBAPI.fetch(category: category)
+            let response = try await MoviesDBAPI.fetch(category: category, page: page + 1)
             storeInCache(response.results, key: cacheKey)
             return response
         } else {
@@ -31,6 +32,10 @@ final class MovieRepository: MovieRepositoryProtocol {
             }
             return nil
         }
+    }
+    
+    func searchMovies(_ text: String) async throws -> MovieAPIResult? {
+        return try await MoviesDBAPI.search(text)
     }
     
     private func storeInCache(_ response: [Movie], key: String) {

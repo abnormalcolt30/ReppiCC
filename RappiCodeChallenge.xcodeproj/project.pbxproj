@@ -29,6 +29,7 @@
 		C431B85C2739D3D50034788A /* DetailsViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431B85B2739D3D50034788A /* DetailsViewMode.swift */; };
 		C431B85E2739D3EC0034788A /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431B85D2739D3EC0034788A /* Videos.swift */; };
 		C431B8682739DC440034788A /* RappiCodeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C431B8672739DC440034788A /* RappiCodeChallengeTests.swift */; };
+		C4B0C4D2274414DE004B4220 /* RandomAccessCollection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B0C4D1274414DE004B4220 /* RandomAccessCollection+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C431B85D2739D3EC0034788A /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
 		C431B8652739DC440034788A /* RappiCodeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RappiCodeChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C431B8672739DC440034788A /* RappiCodeChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RappiCodeChallengeTests.swift; sourceTree = "<group>"; };
+		C4B0C4D1274414DE004B4220 /* RandomAccessCollection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				C431B8562739CE020034788A /* UINavigationController+Extensions.swift */,
+				C4B0C4D1274414DE004B4220 /* RandomAccessCollection+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				C431B818273955190034788A /* Movie.swift in Sources */,
 				C431B848273998680034788A /* MoviewCell.swift in Sources */,
 				C431B82A2739666C0034788A /* API.swift in Sources */,
+				C4B0C4D2274414DE004B4220 /* RandomAccessCollection+Extensions.swift in Sources */,
 				C431B828273966430034788A /* Http.swift in Sources */,
 				C431B8592739D0B40034788A /* SearchBar.swift in Sources */,
 				C431B8572739CE020034788A /* UINavigationController+Extensions.swift in Sources */,
